@@ -28,12 +28,12 @@
     <%= f.text_field :password %>
   </div>
   <div class="field">
-    <%= f.label :classRoom %><br />
-    <%= f.collection_select( :classRoom_id, @classRooms, :id, :label) %>
+    <%= f.label :class_room %><br />
+    <%= f.collection_select( :class_room_id, @classRooms, :id, :label) %>
   </div>
   <div class="field">
-    <%= f.label :userType %><br />
-    <%= f.collection_select( :userType_id, @userTypes, :id, :label) %>
+    <%= f.label :user_type %><br />
+    <%= f.collection_select( :user_type_id, @userTypes, :id, :label) %>
   </div>
   <div class="actions">
     <%= f.submit %>
