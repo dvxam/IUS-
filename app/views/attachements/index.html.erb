@@ -1,0 +1,29 @@
+<h1>Listing attachements</h1>
+
+<table>
+  <tr>
+    <th>Label</th>
+    <th>Path</th>
+    <th>Post</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attachements.each do |attachement| %>
+  <tr>
+    <td><%= attachement.label %></td>
+    <td><%= attachement.path %></td>
+    <td><%= attachement.post %></td>
+    <td><%= attachement.comment %></td>
+    <td><%= link_to 'Show', attachement %></td>
+    <td><%= link_to 'Edit', edit_attachement_path(attachement) %></td>
+    <td><%= link_to 'Destroy', attachement, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attachement', new_attachement_path %>
