@@ -1,0 +1,6 @@
+<p>hello</p>
+<ul>
+<% @classmates.each do |user| %>
+	<li> <%= user %> | <%= user.class_room.label %></li>
+<% end %>
+</ul>

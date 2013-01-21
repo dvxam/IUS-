@@ -20,16 +20,8 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :classRoom %><br />
-    <%= f.collection_select( :class_room_id, ClassRoom.all, :id, :label) %>
-  </div>
-  <div class="field">
     <%= f.label :receiver %><br />
     <%= f.collection_select( :receiver_id, User.all, :id, :to_s) %>
-  </div>
-    <div class="field">
-    <%= f.label :sender %><br />
-    <%= f.collection_select( :sender_id, User.all, :id, :to_s) %>
   </div>
   <div class="actions">
     <%= f.submit %>

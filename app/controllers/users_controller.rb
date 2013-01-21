@@ -24,6 +24,13 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def classmates 
+    @classmates = User.find(params[:id]).class_room.users
+
+    render :classmates
+  end
+
   # GET /users/new
   # GET /users/new.json
   def new

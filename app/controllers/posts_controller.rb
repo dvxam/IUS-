@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(:class_room_id => current_user.class_room)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +41,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.sender = current_user
+    @post.class_room = current_user.class_room
 
     respond_to do |format|
       if @post.save

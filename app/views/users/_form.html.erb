@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :class_room %><br />
-    <%= f.collection_select( :class_room_id, @classRooms, :id, :label) %>
+    <%= f.collection_select( :class_room_id, ClassRoom.all, :id, :label) %>
   </div>
   <div class="field">
     <%= f.label :password %><br />

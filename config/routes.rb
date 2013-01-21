@@ -24,6 +24,7 @@ Ius::Application.routes.draw do
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'users/:id/classmates' => 'users#classmates'
 
 
   # The priority is based upon order of creation:
