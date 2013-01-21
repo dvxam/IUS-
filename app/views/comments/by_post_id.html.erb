@@ -1,4 +1,4 @@
-<% @comments.order("created_at desc").each do |comment| %>
+<% @comments.each do |comment| %>
 
   <%= link_to '[x]', comment, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; margin:10px;"  %>
 
@@ -14,11 +14,11 @@
           <%= sender.class_room.label  + " - " + sender.class_room.school.label %>
         </span>
         <span class="dateMessage">
-          <%= post.created_at %>
+          <%= comment.created_at %>
         </span>
         <div class="reponse">
           <%= image_tag "flecheDiscussion.png", :id => "flecheDiscussion" %>
-          <h1><%= comment.post.content %></h1>
+          
           <p><%= comment.content %></p>
         </div>
       </div>

@@ -26,6 +26,8 @@
           <h1><%= post.subject %></h1>
           <p><%= post.content %></p>
         </div>
+        <% @comment = Comment.new() %>
+        <%= render 'comments/form', { :mypost => post.id} %>
       </div>
     </div>
   </div>

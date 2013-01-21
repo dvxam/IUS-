@@ -21,6 +21,20 @@ class CommentsController < ApplicationController
     end
   end
 
+  def by_post_id 
+    if params[:id]
+      @comments = Comment.find_all_by_post_id(params[:id])
+    else
+      @comments = Comment.all
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @comments }
+    end
+
+  end
+
   # GET /comments/new
   # GET /comments/new.json
   def new
@@ -41,6 +55,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
