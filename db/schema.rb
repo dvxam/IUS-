@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110165025) do
+ActiveRecord::Schema.define(:version => 20130121095727) do
 
   create_table "annexes", :force => true do |t|
     t.string   "label"
@@ -64,11 +64,6 @@ ActiveRecord::Schema.define(:version => 20130110165025) do
 
   add_index "folders", ["user_id"], :name => "index_folders_on_user_id"
 
-  create_table "folders_tags", :id => false, :force => true do |t|
-    t.integer "folder_id"
-    t.integer "tag_id"
-  end
-
   create_table "posts", :force => true do |t|
     t.string   "subject"
     t.text     "content"
@@ -115,11 +110,16 @@ ActiveRecord::Schema.define(:version => 20130110165025) do
     t.boolean  "is_validated"
     t.integer  "class_room_id"
     t.integer  "user_type_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
   end
 
   add_index "users", ["class_room_id"], :name => "index_users_on_classRoom_id"
+  add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
   add_index "users", ["user_type_id"], :name => "index_users_on_userType_id"
 
 end

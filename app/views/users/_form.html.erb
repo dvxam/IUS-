@@ -24,16 +24,16 @@
     <%= f.text_field :mail %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
     <%= f.label :class_room %><br />
     <%= f.collection_select( :class_room_id, @classRooms, :id, :label) %>
   </div>
   <div class="field">
-    <%= f.label :user_type %><br />
-    <%= f.collection_select( :user_type_id, @userTypes, :id, :label) %>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.text_field :password_confirmation %>
   </div>
   <div class="actions">
     <%= f.submit %>

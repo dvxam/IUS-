@@ -1,32 +1,29 @@
 Ius::Application.routes.draw do
-  resources :attachements
 
+  resources :attachements
 
   resources :comments
 
-
   resources :schools
-
 
   resources :class_rooms
 
-
   resources :annexes
-
 
   resources :folders
 
-
   resources :tags
-
 
   resources :user_types
 
-
   resources :users
 
-
   resources :posts
+
+  resources :user_sessions
+
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
 
 
   # The priority is based upon order of creation:
@@ -78,7 +75,7 @@ Ius::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'users#index'
 
   # See how all your routes lay out with "rake routes"
 
