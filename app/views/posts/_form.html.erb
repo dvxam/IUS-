@@ -11,19 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :receiver %><br />
+    <%= f.text_field :subject, :placeholder => "Nouveau Sujet", :class => "input" %>
+
+    <%= f.text_field :content, :placeholder => "Corps du message", :class => "input", :id =>  "input2" %>
+
+    <div class="basArticle">
+      <a id="inclureVideo" href="">Inclure une vidéo ?</a>  <a id="joindreVideo" href=""><span id="plus">+</span> Joindre le fichier</a>
+      <%= f.submit "Envoyer le message", :id => "envoyer" %>
+    </div>
+
     <%= f.collection_select( :receiver_id, User.all, :id, :to_s) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

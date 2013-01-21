@@ -11,3 +11,379 @@
  *= require_self
  *= require_tree .
  */
+
+
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../usr/local/rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 20, ../sass/screen.scss */
+body {
+  background-color: #2c3033;
+  font-family: "Proxima Nova",Georgia,Serif;
+  color: #fdece9;
+}
+
+/* line 25, ../sass/screen.scss */
+a {
+  text-decoration: none;
+  color: #fdece9;
+}
+
+/* line 29, ../sass/screen.scss */
+.center-page {
+  width: 950px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0 auto;
+}
+
+/* line 35, ../sass/screen.scss */
+#header {
+  padding: 12px 0 21px 0;
+  font-size: 14px;
+}
+
+/* line 42, ../sass/screen.scss */
+.rougefonce {
+  background: #a53e2d;
+  padding: 10px 0 0 0;
+  width: 100%;
+}
+
+/* line 47, ../sass/screen.scss */
+.rougeclair {
+  background: #bf4835;
+}
+
+/* line 51, ../sass/screen.scss */
+#header ul li {
+  display: inline-block;
+  vertical-align: top;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+}
+
+/* line 57, ../sass/screen.scss */
+#logo {
+  height: 49px;
+  padding-left: 80px;
+}
+
+/* line 61, ../sass/screen.scss */
+#li1 {
+  padding-left: 112px;
+}
+
+/* line 64, ../sass/screen.scss */
+#li2 {
+  padding-left: 45px;
+}
+
+/* line 65, ../sass/screen.scss */
+#li3 {
+  padding-left: 45px;
+}
+
+/* line 66, ../sass/screen.scss */
+.gauche {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 71, ../sass/screen.scss */
+.droite {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 76, ../sass/screen.scss */
+#header nav ul {
+  padding-top: 25px;
+}
+
+/* line 80, ../sass/screen.scss */
+#header nav ul li a :hover {
+  color: #e8e8e8;
+}
+
+/* line 83, ../sass/screen.scss */
+.gauche nav ul li a {
+  color: #c3c3c3;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+}
+
+/* line 87, ../sass/screen.scss */
+.gauche nav ul li a :hover {
+  color: #e8e8e8;
+}
+
+/* line 90, ../sass/screen.scss */
+#page .gauche {
+  width: 195px;
+  padding: 40px 0 0 21px;
+  font-size: 12pt;
+  letter-spacing: 0.1em;
+}
+
+/* line 97, ../sass/screen.scss */
+#page .droite {
+  width: 715px;
+  margin: 50px 0 0 0;
+}
+
+/* line 101, ../sass/screen.scss */
+#page .gauche ul li {
+  line-height: 45px;
+  padding-left: 15px;
+}
+
+/* line 105, ../sass/screen.scss */
+.ajoutEnseignant {
+  margin-top: 30px;
+  display: block;
+  border-top: 1px solid #222527;
+  border-bottom: 1px solid #222527;
+  padding: 20px 0 20px 15px;
+}
+
+/* line 113, ../sass/screen.scss */
+.dossier {
+  margin-top: 30px;
+  display: block;
+  background-color: #222527;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+  line-height: 150%;
+}
+
+/* line 122, ../sass/screen.scss */
+.gauche a {
+  color: #c3c3c3;
+}
+
+/* line 125, ../sass/screen.scss */
+.fleche {
+  padding: 0 0 0 10px;
+}
+
+/* line 130, ../sass/screen.scss */
+#headerDroite {
+  border-bottom: 1px solid #303337;
+  background-color: #3a3e42;
+  padding: 23px 15px 23px 15px;
+  width: 100%;
+  letter-spacing: 0.1em;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+}
+
+/* line 139, ../sass/screen.scss */
+#headerDroite a {
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+}
+
+/* line 142, ../sass/screen.scss */
+.discussion {
+  width: 100%;
+  padding: 0 15px 30px 15px;
+  background-color: #e8e8e8;
+  border-bottom: 1px solid #c7c8c8;
+  border-top: 1px solid #f1f0f0;
+}
+
+/* line 153, ../sass/screen.scss */
+.discussion .nomUtilisateur a {
+  text-transform: uppercase;
+  color: #bf4835;
+  padding: 15px 0 0 0;
+  letter-spacing: 0.1em;
+}
+
+.discussion > h1 {
+  text-transform: uppercase;
+  color: #bf4835;
+  padding: 15px 0 0 0;
+  letter-spacing: 0.1em;
+}
+
+/* line 159, ../sass/screen.scss */
+.input {
+  margin-top: 23px;
+  display: block;
+  border: 1px solid #c7c8c8;
+  padding: 13px 15px 13px 15px;
+  width: 680px;
+  outline: 0 none;
+}
+
+/* line 168, ../sass/screen.scss */
+#input2 {
+  margin-top: -3px;
+  border: 1px solid #c7c8c8;
+}
+
+/* line 173, ../sass/screen.scss */
+#inclureVideo {
+  display: inline-block;
+  color: #2c3033;
+  padding: 13px 0 0 20px;
+}
+
+/* line 178, ../sass/screen.scss */
+#joindreVideo {
+  display: inline-block;
+  color: #bf5141;
+  margin: 0 0 0 30px;
+  padding: 0 0 0 80px;
+}
+
+/* line 184, ../sass/screen.scss */
+.basArticle {
+  margin: 23px 0 0 0;
+}
+
+/* line 189, ../sass/screen.scss */
+#envoyer {
+  border: none;
+  background-color: #2c3033;
+  float: right;
+  text-transform: uppercase;
+  color: #cecece;
+  padding: 13px 13px 13px 13px;
+  margin-right: 3px;
+  letter-spacing: 0.2em;
+}
+
+/* line 200, ../sass/screen.scss */
+#plus {
+  font-weight: bold;
+}
+
+/* line 203, ../sass/screen.scss */
+.imageProfil {
+  margin: 20px 0 0 0;
+  border: 4px solid white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.27) 0 0 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.27) 0 0 4px;
+  box-shadow: rgba(0, 0, 0, 0.27) 0 0 4px;
+}
+
+/* line 209, ../sass/screen.scss */
+.libUtilisateur {
+  color: #2c3033;
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 0 0 15px;
+}
+
+/* line 217, ../sass/screen.scss */
+.nomUtilisateur {
+  display: block;
+}
+
+/* line 220, ../sass/screen.scss */
+.classeUtilisateur {
+  display: inline-block;
+  padding: 5px 0 0 0;
+  color: #9c9b9b;
+  font-size: 14px;
+}
+
+/* line 226, ../sass/screen.scss */
+.dateMessage {
+  display: inline-block;
+  float: right;
+}
+
+/* line 230, ../sass/screen.scss */
+.reponse #flecheDiscussion {
+  margin: -4px 0 0 -23px;
+  position: absolute;
+}
+
+/* line 236, ../sass/screen.scss */
+.discussion .libUtilisateur .reponse {
+  color: #666667;
+  width: 530px;
+  background-color: #f1f0f0;
+  border: solid 1px #c7c8c8;
+  margin: 15px 0 0 0;
+  padding: 15px;
+}
+
+/* line 245, ../sass/screen.scss */
+.discussion .libUtilisateur .reponse h1 {
+  color: #bf4835;
+  text-transform: none;
+}
+
+/* line 249, ../sass/screen.scss */
+.discussion .libUtilisateur .reponse p {
+  padding: 10px 0 0 0;
+  font-size: 14.5px;
+  white-space:normal;
+}

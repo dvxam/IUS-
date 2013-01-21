@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(:class_room_id => current_user.class_room)
+    @posts = Post.where("receiver_id = ? OR sender_id = ?", current_user, current_user)
+    @post = Post.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,11 +43,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.sender = current_user
-    @post.class_room = current_user.class_room
+    @post.class_room = nil
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, :notice => 'Post was successfully created.' }
+        format.html { redirect_to :posts}
         format.json { render :json => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }

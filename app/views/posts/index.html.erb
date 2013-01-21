@@ -1,31 +1,33 @@
-<h1>Listing posts</h1>
+<div class="discussion">
+    <h1> Commencer une nouvelle discussion</h1>
+    <%= render 'form' %>
+</div>
 
-<table>
-  <tr>
-    <th>Subject</th>
-    <th>Content</th>
-    <th>Classroom</th>
-    <th>From</th>
-    <th>To</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% @posts.order("created_at desc").each do |post| %>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.subject %></td>
-    <td><%= post.content %></td>
-    <td><%= post.class_room.label %></td>
-    <td><%= post.receiver %></td>
-    <td><%= post.sender %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
+  <%= link_to '[x]', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; margin:10px;"  %>
+
+  <div class="discussion">
+    <div class="avatarUtilisateur">
+      <% sender = Post.find(post).sender %>
+      <img src="<%= sender.avatar %>" class="imageProfil">
+      <div class="libUtilisateur">
+        <span class="nomUtilisateur">
+          <%= link_to sender, sender %> 
+        </span>
+        <span class="classeUtilisateur">
+          <%= sender.class_room.label  + " - " + sender.class_room.school.label %>
+        </span>
+        <span class="dateMessage">
+          <%= post.created_at %>
+        </span>
+        <div class="reponse">
+          <%= image_tag "flecheDiscussion.png", :id => "flecheDiscussion" %>
+          <h1><%= post.subject %></h1>
+          <p><%= post.content %></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Post', new_post_path %>

@@ -1,29 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>IUS</title>
-      <%= stylesheet_link_tag    "application" %>
-      <%= javascript_include_tag "application" %>
-      <%= csrf_meta_tags %>
-  </head>
-  <body>
-    
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout %>
-      <p> User : <%= link_to current_user, current_user %> </p>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
+<html id="home" >
+<head>
+  <title>IUS</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="rougefonce">
+    <div class="rougeclair">
+      <div id="header" class="center-page">
+        <div class="gauche">
+          <%= image_tag "logo.png", :id => "logo" %>
+        </div>
+        <div class="droite">
+          <nav>
+            <ul>
+              <% if current_user %>
+                <li id="li1">
+                  <%= link_to "MON PROFIL", edit_user_path(current_user.id) %>
+                </li>
+                <li id="li2"><a href="">MES PARAMETRES</a></li>
+                <li id="li3"><%= link_to "DECONNEXION", :logout %></li>
+              <% else %>
+                <li id="li1">
+                  <%= link_to "Register", new_user_path %>
+                </li>
+                <li id="li2">
+                  <%= link_to "Login", :login %>
+                </li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
-  </div>
+  <div id="page" class="center-page">
+    <div class="gauche">
+      <nav>
+        <ul>
+          <li><a href="">Tableau de Bord</a></li>
+          <% if current_user %>
+            <li>
+              <%= link_to "Messages Privés", :posts, :id => current_user.id %>
+            </li>
+          <% end %>
+          <li><a href="">Message de Classe</a></li> 
+          <li><a href="">Dossiers Élèves</a></li>
+          <li><a href="">Mes Élèves</a></li>  
+          <li><a href="">Mes Classes</a></li> 
+        </ul>
+      </nav>
+      <a class="ajoutEnseignant">Ajouter Enseignant</a>
+      <a class="dossier">Consulter les dossier archivés</a>
+    </div>
+    <div class="droite">
+      <div id="headerDroite">
+        <a href=""> Les Messages Privés à quoi ça sert ? <%= image_tag "fleche.png", :class => "fleche" %></a>
+      </div>
 
-  <%= yield %>
-    
-  </body>
-</html>
+      <%= yield %>
+
+    </div>
+  </div>
+</div>
+</body>
+</html> 
+
+
