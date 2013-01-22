@@ -11,6 +11,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def by_class_room
+    @posts = Post.order("created_at desc").find_all_by_class_room_id(current_user.class_room)
+    @post = Post.new
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @posts }
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -38,16 +48,20 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
     @post.sender = current_user
-    @post.class_room = nil
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to :posts}
+        if @post.class_room == nil
+          format.html { redirect_to :posts}
+        else
+          format.html { redirect_to :posts_by_class_room}
+        end
         format.json { render :json => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }

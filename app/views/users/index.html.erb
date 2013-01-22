@@ -1,40 +1,24 @@
-<h1>Listing users</h1>
+<div class="discussion">
+    <table>
+        <tr>
+            <th colspan=2> Élève </th>
+            <th> Classe </th>
+            <th> État </th>
+        </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td ><img src="<%= user.avatar %>" class="imageProfil"></td>
+        <td style="border-left:none;"><%= link_to user, user %></td>
+        <td><%=  user.class_room.label %></td>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Firstname</th>
-    <th>Avatar</th>
-    <th>Mail</th>
-    <th>Is validated</th>
-    <th></th>
-    <th>Classroom</th>
-    <th>Usertype</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><img src="<%= user.avatar %>" alt="<%= user %>"></td>
-    <td><%= user.name %></td>
-    <td><%= user.firstname %></td>
-    
-    <td><%= user.mail %></td>
-    <td><%= user.is_validated %></td>
-    <% if user.class_room %>
-        <td><%= user.class_room.label %></td>
-        <td><%= user.class_room.school.label %></td>
+        <td>
+            <% if user.is_validated %>
+                <div class="point green_point"></div>
+            <% else %>
+                <div class="point red_point"></div>
+            <% end %>
+        </td>
+      </tr>
     <% end %>
-    <td><%= user.user_type.label %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+    </table>
+</div>

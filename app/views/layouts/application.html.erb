@@ -47,10 +47,10 @@
               <%= link_to "Tableau de Bord", current_user %>
             </li>
             <li>
-              <%= link_to "Messages Privés", :controller => 'posts', :id => current_user.id %>
+              <%= link_to "Messages Privés", :posts, :id => current_user.id %>
             </li>
             <li>
-              <%= link_to "Messages de Classe", :posts, :id => current_user.id %>
+              <%= link_to "Messages de Classe",:posts_by_class_room, :id => current_user.id %>
             </li>
 
             
@@ -88,10 +88,10 @@
     </div>
   </div>
   <div id="footer">      
-    <span>À propos de ius</span>
-    <span>Confidentialité</span>
-    <span>Conditions d'utilisations</span>
-    <span>Aide</span>
+    <span><%= link_to "À propos de ius", 'pages/apropos' %></span>
+    <span><%= link_to "Confidentialité", 'pages/confidentialite' %></span>
+    <span><%= link_to "Conditions d'utilisations", 'pages/conditions' %></span>
+    <span><%= link_to 'Aide', 'pages/aide' %></span>
     <span>Réalisé par 
       <a href="http://www.antoninlanglade.com">Antonin</a>
       <a href="http://www.maximedeveaux.com">Maxime</a> &

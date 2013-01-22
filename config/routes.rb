@@ -1,5 +1,13 @@
 Ius::Application.routes.draw do
 
+  get "pages/apropos"
+
+  get "pages/confidentialite"
+
+  get "pages/conditions"
+
+  get "pages/aide"
+
   resources :attachements
 
   resources :comments
@@ -24,6 +32,7 @@ Ius::Application.routes.draw do
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'posts_by_class_room' => 'posts#by_class_room', :as => :posts_by_class_room
 
   match 'teacher/new' => 'users#add_teacher', :as => :add_teacher
   match 'users/:id/classmates' => 'users#classmates', :as => :classmates

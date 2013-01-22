@@ -11,21 +11,18 @@
     </div>
   <% end %>
 
+
     <%= f.text_field :subject, :placeholder => "Nouveau Sujet", :class => "input" %>
 
     <%= f.text_field :content, :placeholder => "Corps du message", :class => "input", :id =>  "input2" %>
 
     <div class="basArticle">
       <a id="inclureVideo" href="">Inclure une vidéo ?</a>  <a id="joindreVideo" href=""><span id="plus">+</span> Joindre le fichier</a>
+
       <%= f.submit "Envoyer le message", :id => "envoyer" %>
     </div>
 
-    <% if current_user.user_type.label == "Professeur"  %>
-      <%= f.collection_select( :receiver_id, User.all, :id, :to_s) %>
-    <% else %>
-      <% prof = User.find_by_class_room_id_and_user_type_id(current_user.class_room, 2) %>
-      <%= f.hidden_field :receiver_id, :value=> prof.id %>
-    <% end %>
+    <%= f.hidden_field :class_room_id, :value=> current_user.class_room.id %>
 
 
 <% end %>

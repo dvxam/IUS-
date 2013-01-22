@@ -5,4 +5,6 @@ class Post < ActiveRecord::Base
   has_many :attachement
   has_many :comments
   attr_accessible :content, :subject, :sender_id, :receiver_id, :class_room_id
+  validates :subject, :presence => true
+  validates :content, :presence => true
 end

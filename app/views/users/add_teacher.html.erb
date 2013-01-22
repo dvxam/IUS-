@@ -11,31 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.text_field :password_confirmation %>
-  </div>
+  <div class="discussion">
 
-  <%=f.hidden_field :user_type_id, :value=> 2 %>
-  <%=f.hidden_field :is_validated, :value=> true %>
+    <h1>Créer un nouveau Professeur </h1>
 
-  <div class="actions">
-    <%= f.submit %>
+    <%= f.text_field :name, :class => 'input', :placeholder => 'Nom' %>
+    <%= f.text_field :firstname, :class => 'input', :placeholder => 'Prénom' %>
+    <%= f.text_field :mail, :class => 'input', :placeholder => 'e-mail' %>
+    <%= f.password_field :password, :class => 'input', :placeholder => '••••••' %>
+    <%= f.password_field :password_confirmation, :class => 'input', :placeholder => '••••••' %>
+
+    <%=f.hidden_field :user_type_id, :value=> 2 %>
+    <%=f.hidden_field :is_validated, :value=> true %>
+
+    <div>
+      <%= f.submit "Créer", :id => "envoyer2" %>
+    </div>
   </div>
 <% end %>

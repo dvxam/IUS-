@@ -1,9 +1,9 @@
 <div class="discussion">
-    <h1> Commencer une nouvelle discussion</h1>
-    <%= render 'form' %>
+    <h1> Commencer une nouvelle discussion avec votre classe</h1>
+    <%= render 'form_for_class_room' %>
 </div>
 
-<% @posts.order("created_at desc").each do |post| %>
+<% @posts.each do |post| %>
 
   <%= link_to '[x]', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; "  %>
 
