@@ -325,7 +325,6 @@ a {
 
 /* line 203, ../sass/screen.scss */
 .imageProfil {
-  margin: 20px 0 0 0;
   border: 4px solid white;
   -webkit-box-shadow: rgba(0, 0, 0, 0.27) 0 0 4px;
   -moz-box-shadow: rgba(0, 0, 0, 0.27) 0 0 4px;
@@ -400,6 +399,10 @@ a {
   color: black;
 }
 
+.discussion {
+  padding-top: 20px;
+}
+
 
 .inline{
   display:inline-block;
@@ -424,6 +427,8 @@ a {
 }
 
 /* TABLE */
+
+
 
 .discussion table a:link {
   color: #666;
@@ -467,9 +472,10 @@ a {
   background: #ededed;
   background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
   background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+  text-align: center;
 }
 .discussion table th:first-child {
-  text-align: left;
+  text-align: center;
   padding-left:20px;
 }
 .discussion table tr:first-child th:first-child {
@@ -524,3 +530,34 @@ a {
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
   background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);  
 }
+
+.discussion table h1 a {
+  text-transform: uppercase;
+  color: #bf4835;
+  padding: 15px 0 0 0;
+  letter-spacing: 0.1em;
+}
+
+
+/* FOOTER*/
+#footer {
+  width: 100%;
+  color: #5f6365;
+  background-color: #222527;
+  margin-top: 60px;
+  padding: 40px 0 40px 0;
+  text-align: center;
+}
+
+#footer span {
+  padding: 30px;
+}
+
+#footer span a{
+  color: #5f6365;
+}
+
+#footer span a:hover{
+  color: #FDECE9;
+}
+
