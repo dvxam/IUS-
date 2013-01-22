@@ -10,20 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :label %><br />
-    <%= f.text_field :label %>
-  </div>
-  <div class="field">
-    <%= f.label :path %><br />
-    <%= f.text_field :path %>
-  </div>
-  <div class="field">
-    <%= f.label :user %><br />
-    <%= f.collection_select( :user_id, User.all, :id, :to_s) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="discussion">
+        <%= f.text_field :label, :placeholder => "Nom du Dossier", :class => "input" %>
+        <%= f.submit "Créer mon Dossier" %>
+    </div>
 <% end %>

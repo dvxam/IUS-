@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 
-  skip_before_filter :require_login, :only => [:index, :new, :create]
+  skip_before_filter :require_login, :only => [ :new, :create]
   
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # 1 is for UserType : 'Professeur'
+    @users = User.find_all_by_class_room_id_and_user_type_id(current_user.class_room, 1)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @last_post = Post.find_by_receiver_id(@user)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,11 +26,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def add_teacher
+    @teacher = User.new;
+
+    respond_to do |format|
+      format.html 
+      format.json { render :json => @teacher }
+    end
+  end
+
 
   def classmates 
-    @classmates = User.find(params[:id]).class_room.users
+    @classroom = User.find(current_user.id).class_room
+    @classmates = User.order('class_room_id DESC').find_all_by_class_room_id_and_user_type_id(@classroom.id, 1)
 
-    render :classmates
+    respond_to do |format|
+      format.html 
+      format.json { render :json => @classmates }
+      format.xml { render :xml => @classmates }
+    end
   end
 
   # GET /users/new

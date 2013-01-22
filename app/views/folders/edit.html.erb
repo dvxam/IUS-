@@ -1,6 +1,3 @@
-<h1>Editing folder</h1>
-
 <%= render 'form' %>
 
-<%= link_to 'Show', @folder %> |
-<%= link_to 'Back', folders_path %>
+<%= link_to 'retour', :controller => "folders", :action => "show" , :id => current_user.folder %>

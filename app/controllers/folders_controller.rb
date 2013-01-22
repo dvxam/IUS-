@@ -2,7 +2,9 @@ class FoldersController < ApplicationController
   # GET /folders
   # GET /folders.json
   def index
-    @folders = Folder.all
+
+    @users_id = User.find_all_by_class_room_id current_user.class_room.id
+    @folders = Folder.where(:user_id => @users_id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,10 +43,11 @@ class FoldersController < ApplicationController
   # POST /folders.json
   def create
     @folder = Folder.new(params[:folder])
+    @folder.user = current_user
 
     respond_to do |format|
       if @folder.save
-        format.html { redirect_to @folder, :notice => 'Folder was successfully created.' }
+        format.html { redirect_to @folder, :notice => 'Le dossier a bien été mis à jour.' }
         format.json { render :json => @folder, :status => :created, :location => @folder }
       else
         format.html { render :action => "new" }

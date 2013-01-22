@@ -1,29 +1,23 @@
-<h1>Listing folders</h1>
 
-<table>
-  <tr>
-    <th>Label</th>
-    <th>Path</th>
-    <th>Isvalidated</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @folders.each do |folder| %>
-  <tr>
-    <td><%= folder.label %></td>
-    <td><%= folder.path %></td>
-    <td><%= folder.isValidated %></td>
-    <td><%= folder.user %></td>
-    <td><%= link_to 'Show', folder %></td>
-    <td><%= link_to 'Edit', edit_folder_path(folder) %></td>
-    <td><%= link_to 'Destroy', folder, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Folder', new_folder_path %>
+<div class="discussion">
+	<table>
+		<tr>
+			<th> Élève </th>
+			<th> Dossier </th>
+			<th> État </th>
+		</tr>
+	<% @folders.each do |folder| %>
+	  <tr>
+	    <td><%= link_to folder.user, folder.user %></td>
+	    <td><%= link_to folder.label, folder %></td>
+	    <td>
+	    	<% if folder.isValidated %>
+	    		<div class="point green_point"></div>
+	    	<% else %>
+	    		<div class="point red_point"></div>
+	    	<% end %>
+	    </td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

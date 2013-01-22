@@ -1,6 +1,6 @@
-<p>hello</p>
-<ul>
 <% @classmates.each do |user| %>
-	<li> <%= user %> | <%= user.class_room.label %></li>
+	<div>
+		<img src="<%= user.avatar %>" alt="<%= user %>">
+	 <%= link_to user  %> | <%= user.class_room.label %>
+	 </div>
 <% end %>
-</ul>

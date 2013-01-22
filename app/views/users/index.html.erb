@@ -23,8 +23,10 @@
     
     <td><%= user.mail %></td>
     <td><%= user.is_validated %></td>
-    <td><%= user.class_room.label %></td>
-    <td><%= user.class_room.school.label %></td>
+    <% if user.class_room %>
+        <td><%= user.class_room.label %></td>
+        <td><%= user.class_room.school.label %></td>
+    <% end %>
     <td><%= user.user_type.label %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>

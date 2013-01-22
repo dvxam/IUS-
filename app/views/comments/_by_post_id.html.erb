@@ -1,3 +1,5 @@
+<% @comments = Comment.find_all_by_post_id(id) %>
+
 <% @comments.each do |comment| %>
 
   <%= link_to '[x]', comment, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; margin:10px;"  %>

@@ -5,7 +5,7 @@
 
 <% @posts.order("created_at desc").each do |post| %>
 
-  <%= link_to '[x]', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; margin:10px;"  %>
+  <%= link_to '[x]', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; "  %>
 
   <div class="discussion">
     <div class="avatarUtilisateur">
@@ -26,9 +26,12 @@
           <h1><%= post.subject %></h1>
           <p><%= post.content %></p>
         </div>
-        <% @comment = Comment.new() %>
-        <%= render 'comments/form', { :mypost => post.id} %>
       </div>
     </div>
   </div>
+    <%= render 'comments/by_post_id', {:id => post.id} %>
+    <% @comment = Comment.new() %>
+    <div class="discussion">
+      <%= render 'comments/form', { :mypost => post.id} %>
+    </div>
 <% end %>

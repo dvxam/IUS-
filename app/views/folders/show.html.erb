@@ -1,25 +1,17 @@
+<div class="discussion">
+	<h1 style="float:right;">
+		<% if @folder.isValidated %>
+			[v]
+		<% else %>
+			[x]
+		<% end %>
+	</h1>
+
+	<h1><%= @folder.label %></h1> 
+
+	<%= link_to 'Edit', edit_folder_path(@folder), :style => "color:black;" %>
+
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Label:</b>
-  <%= @folder.label %>
-</p>
-
-<p>
-  <b>Path:</b>
-  <%= @folder.path %>
-</p>
-
-<p>
-  <b>Isvalidated:</b>
-  <%= @folder.isValidated %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @folder.user %>
-</p>
-
-
-<%= link_to 'Edit', edit_folder_path(@folder) %> |
-<%= link_to 'Back', folders_path %>

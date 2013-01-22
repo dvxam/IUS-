@@ -40,19 +40,42 @@
     <div class="gauche">
       <nav>
         <ul>
-          <li><a href="">Tableau de Bord</a></li>
+          <!-- IF CONNECT -->
           <% if current_user %>
+
             <li>
-              <%= link_to "Messages Privés", :posts, :id => current_user.id %>
+              <%= link_to "Tableau de Bord", current_user %>
             </li>
+            <li>
+              <%= link_to "Messages Privés", :controller => 'posts', :id => current_user.id %>
+            </li>
+            <li>
+              <%= link_to "Messages de Classe", :posts, :id => current_user.id %>
+            </li>
+
+            
+
+            <!-- IF PROF -->
+
+            <% if current_user.user_type_id == 2 %>
+              <li><%= link_to "Dossiers Élèves", :folders %></li> 
+              <li><%= link_to "Mes Élèves", :users %></li>
+              <li><a href="">Mes Classes</a></li>
+            <% else %>
+            <!-- IF STUDENT -->
+              <% if Folder.exists?(current_user.folder) %>
+              <li><%= link_to "Mon Dossier", {:controller => "folders", :action => "show", :id => current_user.folder } %></li>
+              <% else %>
+              <li><%= link_to "Mon Dossier", {:controller => "folders", :action=>"new"} %></li>
+              <% end %>
+            <% end %>
           <% end %>
-          <li><a href="">Message de Classe</a></li> 
-          <li><a href="">Dossiers Élèves</a></li>
-          <li><a href="">Mes Élèves</a></li>  
-          <li><a href="">Mes Classes</a></li> 
+          <!-- END IF CONNECT -->
         </ul>
       </nav>
-      <a class="ajoutEnseignant">Ajouter Enseignant</a>
+      <% if current_user && current_user.user_type_id == 2 %>
+      <%= link_to "Ajouter Enseignant", :add_teacher, :class => "ajoutEnseignant"%>
+      <% end %>
       <a class="dossier">Consulter les dossier archivés</a>
     </div>
     <div class="droite">

@@ -6,4 +6,18 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
-UserType.create([{ :label => 'Eleve' }, { :label => 'Profeseur' }])
+UserType.create([{ :label => 'Eleve' }, { :label => 'Professeur' }])
+
+School.create([{:label => "IUT Michel de Montaigne"}])
+
+ClassRoom.create([{:label => "SRC 13", :school_id => 1}, {:label => "PUB 13", :school_id => 1}])
+
+User.create([{
+  :name => "Millaret",
+  :firstname => "Helene",
+  :mail => "helene@me.com",
+  :password => "admin",
+  :is_validated => false,
+  :class_room_id => 1,
+  :user_type_id => 2
+  }]);
