@@ -37,6 +37,8 @@ Ius::Application.routes.draw do
   match 'teacher/new' => 'users#add_teacher', :as => :add_teacher
   match 'users/:id/classmates' => 'users#classmates', :as => :classmates
 
+  match '/users/:id', :to => 'users#show', :as => :user
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

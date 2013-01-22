@@ -11,7 +11,7 @@
     <div class="rougeclair">
       <div id="header" class="center-page">
         <div class="gauche">
-          <%= image_tag "logo.png", :id => "logo" %>
+          <%= link_to image_tag('logo.png', :id => 'logo'), root_url %>   
         </div>
         <div class="droite">
           <nav>
@@ -79,9 +79,7 @@
       <a class="dossier">Consulter les dossier archivés</a>
     </div>
     <div class="droite">
-      <div id="headerDroite">
-        <a href=""> Les Messages Privés à quoi ça sert ? <%= image_tag "fleche.png", :class => "fleche" %></a>
-      </div>
+
 
       <%= yield %>
 

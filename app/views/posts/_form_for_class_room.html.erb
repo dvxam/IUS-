@@ -12,17 +12,16 @@
   <% end %>
 
 
-    <%= f.text_field :subject, :placeholder => "Nouveau Sujet", :class => "input" %>
+  <%= f.text_field :subject, :placeholder => "Nouveau Sujet", :class => "input" %>
 
-    <%= f.text_field :content, :placeholder => "Corps du message", :class => "input", :id =>  "input2" %>
+  <%= f.text_field :content, :placeholder => "Corps du message", :class => "input", :id =>  "input2" %>
 
-    <div class="basArticle">
-      <a id="inclureVideo" href="">Inclure une vidéo ?</a>  <a id="joindreVideo" href=""><span id="plus">+</span> Joindre le fichier</a>
+  <div class="basArticle">
+    <a id="inclureVideo" href="">Inclure une vidéo ?</a>  <a id="joindreVideo" href=""><span id="plus">+</span> Joindre le fichier</a>
 
-      <%= f.submit "Envoyer le message", :id => "envoyer" %>
-    </div>
+    <%= f.submit "Envoyer le message", :id => "envoyer" %>
+  </div>
 
-    <%= f.hidden_field :class_room_id, :value=> current_user.class_room.id %>
-
+  <%= f.hidden_field :class_room_id, :value=> current_user.class_room.id %>
 
 <% end %>

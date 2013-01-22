@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-    @last_post = Post.find_by_receiver_id(@user)
+    @user = current_user
+    @last_post = Post.find_by_receiver_id(current_user)
 
     respond_to do |format|
       format.html # show.html.erb

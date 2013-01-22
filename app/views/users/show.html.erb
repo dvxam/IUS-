@@ -8,8 +8,9 @@
 
 
   <h1>Dernier Message Privé : </h1>
+  <% if @last_post %>
   <div class="avatarUtilisateur">
-    <% sender = Post.find(@last_post).sender %>
+    <% sender = Post.find(@last_post.id).sender %>
     <img src="<%= sender.avatar %>" class="imageProfil">
     <div class="libUtilisateur">
       <span class="nomUtilisateur">
@@ -28,4 +29,7 @@
       </div>
     </div>
   </div>
+  <% else %>
+  <p>Pas de message</p>
+  <% end %>
 </div>
