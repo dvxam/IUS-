@@ -12,6 +12,8 @@ class FoldersController < ApplicationController
     end
   end
 
+
+
   # GET /folders/1
   # GET /folders/1.json
   def show
@@ -44,6 +46,7 @@ class FoldersController < ApplicationController
   def create
     @folder = Folder.new(params[:folder])
     @folder.user = current_user
+    @folder.path = params[:path];
 
     respond_to do |format|
       if @folder.save
@@ -60,6 +63,7 @@ class FoldersController < ApplicationController
   # PUT /folders/1.json
   def update
     @folder = Folder.find(params[:id])
+    @folder.path = params[:path];
 
     respond_to do |format|
       if @folder.update_attributes(params[:folder])

@@ -12,6 +12,7 @@
   <% end %>
     <div class="discussion">
         <%= f.text_field :label, :placeholder => "Nom du Dossier", :class => "input" %>
+        <%= f.file_field :path %>
         <%= f.submit "Créer mon Dossier" %>
     </div>
 <% end %>

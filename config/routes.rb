@@ -7,6 +7,8 @@ Ius::Application.routes.draw do
   get "pages/conditions"
 
   get "pages/aide"
+  
+  get "pages/home"
 
   resources :attachements
 
@@ -37,7 +39,9 @@ Ius::Application.routes.draw do
   match 'teacher/new' => 'users#add_teacher', :as => :add_teacher
   match 'users/:id/classmates' => 'users#classmates', :as => :classmates
 
-  match '/users/:id', :to => 'users#show', :as => :user
+  match 'users/:id', :to => 'users#show', :as => :user
+
+  match '/edit_avatar', :to => 'users#edit_avatar', :as => :edit_avatar
 
 
   # The priority is based upon order of creation:
@@ -89,7 +93,7 @@ Ius::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'users#index'
+  root :to => 'pages#home'
 
   # See how all your routes lay out with "rake routes"
 

@@ -22,13 +22,6 @@
                 </li>
                 <li id="li2"><a href="">MES PARAMETRES</a></li>
                 <li id="li3"><%= link_to "DECONNEXION", :logout %></li>
-              <% else %>
-                <li id="li1">
-                  <%= link_to "Register", new_user_path %>
-                </li>
-                <li id="li2">
-                  <%= link_to "Login", :login %>
-                </li>
               <% end %>
             </ul>
           </nav>

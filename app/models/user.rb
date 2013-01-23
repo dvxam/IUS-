@@ -8,9 +8,14 @@ class User < ActiveRecord::Base
   has_one :folder
   has_many :annexs
 
-  validates_presence_of :mail, :message => "You need to enter a mail!"
-  validates_length_of :password, :minimum => 3, :message => "password must be at least 3 characters long", :if => :password
-  validates_confirmation_of :password, :message => "should match confirmation", :if => :password
+  mount_uploader :avatar, AvatarUploader
+
+  validates_presence_of :firstname, :message => "Vous devez entrer un prénom!"
+  validates_presence_of :name, :message => "Vous devez entrer un prénom!"
+  validates_presence_of :mail, :message => "Vous devez entrer un email valide!"
+  validates_uniqueness_of :mail, :message => "Cet e-mail est déjà utilisé!"
+  validates_length_of :password, :minimum => 3, :message => "Le mot de passe doit faire au moins 3 caractèress", :if => :password
+  validates_confirmation_of :password, :message => "Le mot de passe et sa confirmation doivent être identique", :if => :password
 
   after_initialize :set_defaults
 

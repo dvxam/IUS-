@@ -26,6 +26,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_avatar
+    @user = current_user
+  end
+
+  def update_avatar
+    @user = current_user
+    @user.avatar = params[:avatar]
+
+    respond_to do |format|
+      if @user.update_attributes(params[:avatar])
+        format.html { redirect_to @user, :notice => 'User was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render :action => "edit" }
+        format.json { render :json => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
   def add_teacher
     @teacher = User.new;
 
@@ -70,13 +89,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @user.avatar = params[:avatar]
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, :notice => 'User was successfully created.' }
+        format.html { redirect_to :root, :notice => 'User was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to :root, :notice => "L'utilisateur n'a pas été créé!"  }
         format.json { render :json => @user.errors, :status => :unprocessable_entity }
       end
     end

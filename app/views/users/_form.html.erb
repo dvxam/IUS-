@@ -1,4 +1,8 @@
+<% if current_user %>
 <div class="discussion">
+<% else %>
+<div class="formAccueil">
+<% end %>
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -12,23 +16,33 @@
       </div>
     <% end %>
 
-      <div class="field">
-        <p class="inline">Classe :</p>
-        <%= f.collection_select( :class_room_id, ClassRoom.all, :id, :label) %>
+    <p id="notice"><%= notice %></p>
+
+
+      <%= f.text_field :name, :class => 'inputAccueil', :placeholder => 'Nom'%>
+
+      <%= f.text_field :firstname, :class => 'inputAccueil', :placeholder => 'Prénom' %>
+
+      <%= f.email_field :mail, :class => 'inputAccueil', :placeholder => 'e-mail' %>
+
+      <%= f.password_field :password, :class => 'inputAccueil', :placeholder => '••••••' %>
+
+      <%= f.password_field :password_confirmation, :class => 'inputAccueil', :placeholder => '••••••' %>
+
+      <div class="selectAccueil">
+        <%= select_tag :i, options_from_collection_for_select(School.all, :id, :label)%>
       </div>
 
-      <%= f.text_field :name, :class => 'input', :placeholder => 'Nom' %>
+      <div class="selectAccueil">
+        <%= f.collection_select( :class_room_id, ClassRoom.all, :id, :label ) %>
+      </div>
 
-      <%= f.text_field :firstname, :class => 'input', :placeholder => 'Prénom' %>
-
-      <%= f.text_field :mail, :class => 'input', :placeholder => 'e-mail' %>
-
-      <%= f.text_field :password, :class => 'input', :placeholder => '••••••' %>
-
-      <%= f.text_field :password_confirmation, :class => 'input', :placeholder => '••••••' %>
+      <% if current_user %>
+        <%= link_to "Changer avatar", :edit_avatar, :id => 'envoyer', :class => 'inline' %>
+      <% end %>
 
       <div class="actions">
-        <%= f.submit 'S\'inscrire', :id => 'envoyer2' %>
+        <%= f.submit 'Envoyer', :id => 'envoyer2', :class => 'inline' %>
       </div>
   <% end %>
 </div>
