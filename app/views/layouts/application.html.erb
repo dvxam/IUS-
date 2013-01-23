@@ -11,7 +11,11 @@
     <div class="rougeclair">
       <div id="header" class="center-page">
         <div class="gauche">
-          <%= link_to image_tag('logo.png', :id => 'logo'), root_url %>   
+          <% if current_user %>
+            <%= link_to image_tag('logo.png', :id => 'logo'), current_user %>   
+          <% else %>
+            <%= link_to image_tag('logo.png', :id => 'logo'), root_url %>   
+          <% end %>
         </div>
         <div class="droite">
           <nav>

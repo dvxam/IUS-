@@ -677,7 +677,6 @@ a {
   border-radius: 0;
 }
 
-
 /* line 375, ../sass/screen.scss */
 .envoyerAccueil {
   border: none;
@@ -703,7 +702,13 @@ a {
   text-align: right;
 }
 
-
+/* NOTICE */
+.notice{
+  width:100%;
+  text-align: center;
+  margin-top:15px;
+  margin-bottom: -20px;
+}
 
 
 

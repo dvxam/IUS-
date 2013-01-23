@@ -20,21 +20,25 @@
 			</div>
 		</div>
 	</div>
-<div id="page" class="center-page">
-	<div class="gaucheAcceuil">
-		<div id="formulaireGauche" class="formulaireAcceuil">
-			<h1>S'inscrire</h1>
-			<%= render 'users/form' %>
-		</div>
+	<div class="notice">
+		<p id="notice"><%= notice %></p>
 	</div>
-	<div class="droiteAcceuil">
-		<div class="formulaireAcceuil">
-			<h1>Se connecter</h1>
-			<%= render 'user_sessions/form' %>
+	
+	<div id="page" class="center-page">
+		<div class="gaucheAcceuil">
+			<div id="formulaireGauche" class="formulaireAcceuil">
+				<h1>S'inscrire</h1>
+				<%= render 'users/form' %>
+			</div>
 		</div>
+		<div class="droiteAcceuil">
+			<div class="formulaireAcceuil">
+				<h1>Se connecter</h1>
+				<%= render 'user_sessions/form' %>
+			</div>
+		</div>
+			
 	</div>
-		
-</div>
 		<div id="footer">
 				
 				<span>À propos de ius</span>
