@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Label</th>
-    <th>School</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +10,7 @@
 
 <% @class_rooms.each do |class_room| %>
   <tr>
-    <td><%= class_room.label %></td>
-    <td><%= class_room.school %></td>
+    <td><%= class_room %></td>
     <td><%= link_to 'Show', class_room %></td>
     <td><%= link_to 'Edit', edit_class_room_path(class_room) %></td>
     <td><%= link_to 'Destroy', class_room, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

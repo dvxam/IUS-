@@ -3,6 +3,7 @@
         <tr>
             <th colspan=2> Élève </th>
             <th> Classe </th>
+            <th> E-mail </th>
             <th> État </th>
         </tr>
     <% @users.each do |user| %>
@@ -10,6 +11,7 @@
         <td ><img src="<%= user.avatar %>" class="imageProfil"></td>
         <td style="border-left:none;"><%= link_to user, user %></td>
         <td><%=  user.class_room.label %></td>
+        <td><%=  user.mail %></td>
 
         <td>
             <% if user.is_validated %>

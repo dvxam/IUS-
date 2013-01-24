@@ -5,8 +5,6 @@
 
 <% @posts.order("created_at desc").each do |post| %>
 
-  <%= link_to '[x]', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; "  %>
-
   <div class="discussion">
     <div class="avatarUtilisateur">
       <% sender = Post.find(post).sender %>

@@ -10,6 +10,8 @@ Ius::Application.routes.draw do
   
   get "pages/home"
 
+  get "pages/public"
+
   resources :attachements
 
   resources :comments

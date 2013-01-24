@@ -7,10 +7,15 @@ class UserSessionsController < ApplicationController
   end
 
   def create
+
     respond_to do |format|
       if @user = login(params[:mail],params[:password])
-        format.html { redirect_back_or_to(:posts_by_class_room, :notice => 'Login successful.') }
-        format.xml { render :xml => @user, :status => :created, :location => @user }
+        if current_user.is_validated
+          format.html { redirect_to current_user }
+          format.xml { render :xml => @user, :status => :created, :location => @user }
+        else
+          format.html { flash.now[:alert] = "Login failed."; redirect_to :logout}
+        end
       else
         format.html { flash.now[:alert] = "Login failed."; redirect_to :root, :notice => 'Mauvais mot de passe ou e-mail!' }
         format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
@@ -18,8 +23,13 @@ class UserSessionsController < ApplicationController
     end
   end
 
-  def destroy
-    logout
-    redirect_to :root
+  def destroy 
+    if  current_user.is_validated
+      logout
+      redirect_to :root, :notice => 'Logged Out!'
+    else
+      logout
+      redirect_to :root, :notice => 'Utilisateur non validé!'
+    end
   end
 end

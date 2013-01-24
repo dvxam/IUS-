@@ -23,16 +23,16 @@
 
       <%= f.email_field :mail, :class => 'inputAccueil', :placeholder => 'e-mail' %>
 
+      <% if !current_user %>
+
       <%= f.password_field :password, :class => 'inputAccueil', :placeholder => '••••••' %>
 
       <%= f.password_field :password_confirmation, :class => 'inputAccueil', :placeholder => '••••••' %>
 
-      <div class="selectAccueil">
-        <%= select_tag :i, options_from_collection_for_select(School.all, :id, :label)%>
-      </div>
+      <% end %>
 
       <div class="selectAccueil">
-        <%= f.collection_select( :class_room_id, ClassRoom.all, :id, :label ) %>
+        <%= f.collection_select( :class_room_id, ClassRoom.all, :id, :to_s ) %>
       </div>
 
       <% if current_user %>

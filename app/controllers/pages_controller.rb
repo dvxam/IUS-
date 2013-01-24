@@ -25,4 +25,8 @@ class PagesController < ApplicationController
 
   def aide
   end
+
+  def public
+    @folders = Folder.find(:all, :conditions => {:isValidated => true})
+  end
 end
