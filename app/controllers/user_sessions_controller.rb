@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
         format.html { redirect_back_or_to(:posts_by_class_room, :notice => 'Login successful.') }
         format.xml { render :xml => @user, :status => :created, :location => @user }
       else
-        format.html { flash.now[:alert] = "Login failed."; render :action => "new" }
+        format.html { flash.now[:alert] = "Login failed."; redirect_to :root, :notice => 'Mauvais mot de passe ou e-mail!' }
         format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
@@ -20,6 +20,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:root, :notice => 'Logged out!')
+    redirect_to :root
   end
 end
