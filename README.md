@@ -1,3 +1,3 @@
 IUS - plateforme collaborative scolaire
 
-@authors: Deveaux Maxime, Goyenehce Mathias & Langlade Antonin 
+@authors: Deveaux Maxime, Goyeneche Mathias & Langlade Antonin 
