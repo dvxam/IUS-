@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UserTypesController < ApplicationController
   # GET /user_types
   # GET /user_types.json

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAnnexes < ActiveRecord::Migration
   def change
     create_table :annexes do |t|

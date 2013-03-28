@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AnnexesController < ApplicationController
   # GET /annexes
   # GET /annexes.json

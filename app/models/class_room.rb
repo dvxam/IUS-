@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ClassRoom < ActiveRecord::Base
   belongs_to :school
   has_many :posts

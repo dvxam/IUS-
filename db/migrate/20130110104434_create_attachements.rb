@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAttachements < ActiveRecord::Migration
   def change
     create_table :attachements do |t|

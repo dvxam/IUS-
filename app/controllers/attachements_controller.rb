@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AttachementsController < ApplicationController
   # GET /attachements
   # GET /attachements.json

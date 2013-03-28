@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ChangeIndexNameForClassRoomAndUserType < ActiveRecord::Migration
   def up
     rename_column(:users, :classRoom_id, :class_room_id)

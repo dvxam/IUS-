@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PostsUsers < ActiveRecord::Migration
   def self.up
     create_table 'posts_users', :id => false do |t|

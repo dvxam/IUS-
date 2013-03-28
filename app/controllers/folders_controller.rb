@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FoldersController < ApplicationController
   # GET /folders
   # GET /folders.json

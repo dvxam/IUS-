@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Ius::Application.routes.draw do
 
   get "pages/apropos"

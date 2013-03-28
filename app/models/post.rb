@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Post < ActiveRecord::Base
   belongs_to :class_room
   belongs_to :receiver, :class_name => 'User'

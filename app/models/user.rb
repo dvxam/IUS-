@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   belongs_to :class_room
