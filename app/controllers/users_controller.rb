@@ -91,6 +91,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.avatar = params[:avatar]
+    UserMailer.user_created(@user).deliver
 
     respond_to do |format|
       if @user.save

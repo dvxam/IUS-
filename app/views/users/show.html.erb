@@ -60,7 +60,7 @@
       <p>Pas de message</p>
     <% end %>
   <% else %>
-    <% if @user.is_validated %>
+    <% if !@user.is_validated %>
       <%= render 'form_for_validate' %>
     <% else %>
       <p>Utilisateur Validé</p>

@@ -73,7 +73,7 @@
       <% if current_user && current_user.user_type_id == 2 %>
       <%= link_to "Ajouter Enseignant", :add_teacher, :class => "ajoutEnseignant"%>
       <% end %>
-      <a class="dossier">Consulter les dossier archivés</a>
+      <%= link_to "Consulter les dossier archivés", :pages_public , :class => "dossier"%>
     </div>
     <div class="droite">
 

@@ -3,22 +3,14 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.where("receiver_id = ? OR sender_id = ?", current_user, current_user)
-    @post = Post.new
+    @users = User.find_all_by_class_room_id_and_user_type_id(current_user.class_room, 1)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @posts }
-    end
+    self.new
   end
 
   def by_class_room
     @posts = Post.order("created_at desc").find_all_by_class_room_id(current_user.class_room)
-    @post = Post.new
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @posts }
-    end
+    self.new
   end
 
   # GET /posts/1
@@ -58,6 +50,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         if @post.class_room == nil
+          PostMailer.post_created(@post.receiver, @post).deliver
           format.html { redirect_to :posts}
         else
           format.html { redirect_to :posts_by_class_room}

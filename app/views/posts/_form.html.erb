@@ -21,10 +21,9 @@
     </div>
 
     <% if current_user.user_type.label == "Professeur"  %>
-
+			<%= f.collection_select(:receiver_id, @users, :id, :to_s)  %>
     <% else %>
-      <% prof = User.find_by_class_room_id_and_user_type_id(current_user.class_room, 2) %>
-      <%= f.hidden_field :receiver_id, :value=> prof.id %>
+      <%= f.hidden_field :receiver_id, :value=> User.find_by_class_room_id_and_user_type_id(current_user.class_room, 1) %>
     <% end %>
 
 
