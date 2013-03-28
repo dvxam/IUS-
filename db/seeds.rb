@@ -18,7 +18,7 @@ User.create([{
   :firstname => "Helene",
   :mail => "helene@me.com",
   :password => "admin",
-  :is_validated => false,
+  :is_validated => true,
   :class_room_id => 1,
   :user_type_id => 2
   }]);
