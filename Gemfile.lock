@@ -133,6 +133,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   json
+  mail
   nifty-generators
   pg
   rails (= 3.2.9)
