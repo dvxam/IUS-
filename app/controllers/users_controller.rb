@@ -2,8 +2,6 @@
 class UsersController < ApplicationController
 
   skip_before_filter :require_login, :only => [ :new, :create]
-
-  autocomplete :class_room, :label, :display_value => :to_s
   
   # GET /users
   # GET /users.json
@@ -94,10 +92,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.avatar = params[:avatar]
+    UserMailer.user_created(@user).deliver
 
     respond_to do |format|
       if @user.save
-        UserMailer.user_created(@user).deliver
         format.html { redirect_to :root, :notice => 'User was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else

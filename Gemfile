@@ -3,15 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem "sorcery"
 gem "carrierwave"
-gem "mail"
-
-gem 'rails3-jquery-autocomplete'
-gem 'nifty-generators'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do
+group :development do
    gem 'sqlite3'
 end
 

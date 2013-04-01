@@ -29,9 +29,7 @@ Ius::Application.routes.draw do
 
   resources :user_types
 
-  resources :users do
-    get :autocomplete_class_room_label, :on => :collection
-  end
+  resources :users
 
   resources :posts
 
