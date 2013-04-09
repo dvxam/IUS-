@@ -51,7 +51,11 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         if @post.class_room == nil
+<<<<<<< HEAD
           
+=======
+          PostMailer.post_created(@post.receiver, @post).deliver
+>>>>>>> 938ad83a72917b9e92e6e3e6490c6b5f1d9b83ea
           format.html { redirect_to :posts}
         else
           format.html { redirect_to :posts_by_class_room}

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # encoding: UTF-8
+=======
+# -*- encoding : utf-8 -*-
+>>>>>>> 938ad83a72917b9e92e6e3e6490c6b5f1d9b83ea
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
