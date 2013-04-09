@@ -1,0 +1,35 @@
+<div class="discussion">
+    <h1> Commencer une nouvelle discussion</h1>
+    <%= render 'form' %>
+</div>
+
+<% @posts.order("created_at desc").each do |post| %>
+
+  <div class="discussion">
+    <div class="avatarUtilisateur">
+      <% sender = Post.find(post).sender %>
+      <img src="<%= sender.avatar %>" class="imageProfil">
+      <div class="libUtilisateur">
+        <span class="nomUtilisateur">
+          <%= link_to sender, sender %> 
+        </span>
+        <span class="classeUtilisateur">
+          <%= sender.class_room.label  + " - " + sender.class_room.school.label %>
+        </span>
+        <span class="dateMessage">
+          <%= post.created_at %>
+        </span>
+        <div class="reponse">
+          <%= image_tag "flecheDiscussion.png", :id => "flecheDiscussion" %>
+          <h1><%= post.subject  %></h1>
+          <p><%= post.content %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <%= render 'comments/by_post_id', {:id => post.id} %>
+    <% @comment = Comment.new() %>
+    <div class="discussion">
+      <%= render 'comments/form', { :mypost => post.id} %>
+    </div>
+<% end %>

@@ -1,0 +1,25 @@
+<%= form_for(@class_room) do |f| %>
+  <% if @class_room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@class_room.errors.count, "error") %> prohibited this class_room from being saved:</h2>
+
+      <ul>
+      <% @class_room.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.collection_select( :school_id, @schools, :id, :label) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

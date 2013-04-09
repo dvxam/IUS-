@@ -1,0 +1,33 @@
+<%= form_for(@attachement) do |f| %>
+  <% if @attachement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attachement.errors.count, "error") %> prohibited this attachement from being saved:</h2>
+
+      <ul>
+      <% @attachement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :path %><br />
+    <%= f.text_field :path %>
+  </div>
+  <div class="field">
+    <%= f.label :post %><br />
+    <%= f.text_field :post %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

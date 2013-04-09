@@ -1,0 +1,23 @@
+<h1>Listing class_rooms</h1>
+
+<table>
+  <tr>
+    <th>Label</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @class_rooms.each do |class_room| %>
+  <tr>
+    <td><%= class_room %></td>
+    <td><%= link_to 'Show', class_room %></td>
+    <td><%= link_to 'Edit', edit_class_room_path(class_room) %></td>
+    <td><%= link_to 'Destroy', class_room, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Class room', new_class_room_path %>

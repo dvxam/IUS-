@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<div class="discussion">
+  <img src="<%= @user.avatar %>" alt="<%= @user %>" class="inline imageProfil">
+  <h1 class="inline"><%= @user %></h1>
+  <p>Email : <%= mail_to @user.mail %> </p>
+  <p>Ma Classe : <%= @user.class_room.label %></p>
+
+  <% if current_user.id == @user.id  %>
+        
+        <h1>Dernier Message Privé : </h1>
+        <% if @last_private_post %>
+          <div class="avatarUtilisateur">
+            <% sender = Post.find(@last_private_post.id).sender %>
+            <img src="<%= sender.avatar %>" class="imageProfil">
+            <div class="libUtilisateur">
+              <span class="nomUtilisateur">
+                <%= link_to sender, sender %> 
+          </span>
+          <span class="classeUtilisateur">
+            <%= sender.class_room.label  + " - " + sender.class_room.school.label %>
+          </span>
+          <span class="dateMessage">
+            <%= @last_private_post.created_at %>
+          </span>
+          <div class="reponse">
+            <%= image_tag "flecheDiscussion.png", :id => "flecheDiscussion" %>
+            <h1><%= @last_private_post.subject %></h1>
+            <p><%= @last_private_post.content %></p>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <p>Pas de message</p>
+    <% end %>
+
+    <h1>Dernier Message de Classe : </h1>
+    <% if @last_post %>
+      <div class="avatarUtilisateur">
+        <% sender = Post.find(@last_post).sender %>
+        <img src="<%= sender.avatar %>" class="imageProfil">
+        <div class="libUtilisateur">
+          <span class="nomUtilisateur">
+            <%= link_to sender, sender %> 
+          </span>
+          <span class="classeUtilisateur">
+            <%= sender.class_room.label  + " - " + sender.class_room.school.label %>
+          </span>
+          <span class="dateMessage">
+            <%= @last_post.created_at %>
+          </span>
+          <div class="reponse">
+            <%= image_tag "flecheDiscussion.png", :id => "flecheDiscussion" %>
+            <h1><%= @last_post.subject %></h1>
+            <p><%= @last_post.content %></p>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <p>Pas de message</p>
+    <% end %>
+  <% else %>
+    <% if !@user.is_validated %>
+      <%= render 'form_for_validate' %>
+    <% else %>
+      <p>Utilisateur Validé</p>
+    <% end %>
+  <% end %>
+</div>

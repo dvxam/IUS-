@@ -1,0 +1,6 @@
+<% @classmates.each do |user| %>
+	<div>
+		<img src="<%= user.avatar %>" alt="<%= user %>">
+	 <%= link_to user  %> | <%= user.class_room.label %>
+	 </div>
+<% end %>

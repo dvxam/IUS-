@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Label:</b>
+  <%= @annex.label %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @annex.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_annex_path(@annex) %> |
+<%= link_to 'Back', annexes_path %>

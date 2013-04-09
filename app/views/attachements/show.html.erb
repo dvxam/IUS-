@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Label:</b>
+  <%= @attachement.label %>
+</p>
+
+<p>
+  <b>Path:</b>
+  <%= @attachement.path %>
+</p>
+
+<p>
+  <b>Post:</b>
+  <%= @attachement.post %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @attachement.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_attachement_path(@attachement) %> |
+<%= link_to 'Back', attachements_path %>

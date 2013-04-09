@@ -1,0 +1,15 @@
+<div class="discussion">
+	<table>
+		<tr>
+			<th colspan=2> Élève </th>
+			<th> Dossier </th>
+			<th> État </th>
+		</tr>
+	<% @folders.each do |folder| %>
+	  <tr>
+	  	<td ><img src="<%= folder.user.avatar %>" class="imageProfil"></td>
+	    <td style="border-left:none;"><%= link_to folder.user, folder.user %></td>
+	    <td><h1><%= link_to folder.label, folder %></h1></td>
+	  </tr>
+	<% end %>
+</div>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html id="home" >
+<head>
+  <title>IUS</title>
+  <%= stylesheet_link_tag  "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="rougefonce">
+    <div class="rougeclair">
+      <div id="header" class="center-page">
+        <div class="gauche">
+          <% if current_user %>
+            <%= link_to image_tag('logo.png', :id => 'logo'), current_user %>   
+          <% else %>
+            <%= link_to image_tag('logo.png', :id => 'logo'), root_url %>   
+          <% end %>
+        </div>
+        <div class="droite">
+          <nav>
+            <ul>
+              <% if current_user %>
+                <li id="li1">
+                  <%= link_to "MON PROFIL", edit_user_path(current_user.id) %>
+                </li>
+                <li id="li2"><a href="">MES PARAMETRES</a></li>
+                <li id="li3"><%= link_to "DECONNEXION", :logout %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="page" class="center-page">
+    <div class="gauche">
+      <nav>
+        <ul>
+          <!-- IF CONNECT -->
+          <% if current_user %>
+
+            <li>
+              <%= link_to "Tableau de Bord", current_user %>
+            </li>
+            <li>
+              <%= link_to "Messages Privés", :posts, :id => current_user.id %>
+            </li>
+            <li>
+              <%= link_to "Messages de Classe",:posts_by_class_room, :id => current_user.id %>
+            </li>
+
+            
+
+            <!-- IF PROF -->
+
+            <% if current_user.user_type_id == 2 %>
+              <li><%= link_to "Dossiers Élèves", :folders %></li> 
+              <li><%= link_to "Mes Élèves", :users %></li>
+              <li><a href="">Mes Classes</a></li>
+            <% else %>
+            <!-- IF STUDENT -->
+              <% if Folder.exists?(current_user.folder) %>
+              <li><%= link_to "Mon Dossier", {:controller => "folders", :action => "show", :id => current_user.folder } %></li>
+              <% else %>
+              <li><%= link_to "Mon Dossier", {:controller => "folders", :action=>"new"} %></li>
+              <% end %>
+            <% end %>
+          <% end %>
+          <!-- END IF CONNECT -->
+        </ul>
+      </nav>
+      <% if current_user && current_user.user_type_id == 2 %>
+      <%= link_to "Ajouter Enseignant", :add_teacher, :class => "ajoutEnseignant"%>
+      <% end %>
+      <%= link_to "Consulter les dossier archivés", :pages_public , :class => "dossier"%>
+    </div>
+    <div class="droite">
+
+
+      <%= yield %>
+
+    </div>
+  </div>
+  <div id="footer">      
+    <span><%= link_to "À propos de ius", 'pages/apropos' %></span>
+    <span><%= link_to "Confidentialité", 'pages/confidentialite' %></span>
+    <span><%= link_to "Conditions d'utilisations", 'pages/conditions' %></span>
+    <span><%= link_to 'Aide', 'pages/aide' %></span>
+    <span>Réalisé par 
+      <a href="http://www.antoninlanglade.com">Antonin</a>
+      <a href="http://www.maximedeveaux.com">Maxime</a> &
+      <a href="http://www.mathiasgoyheneche.com">Mathias</a>
+    </span>
+  </div>
+</div>
+</body>
+</html> 
+
+

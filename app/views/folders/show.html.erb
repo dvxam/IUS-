@@ -1,0 +1,29 @@
+<div class="discussion">
+	<table style="float:right; margin-top:-10px;">
+		<th>État</th>
+		<td>
+		<% if @folder.isValidated %>
+			<div class="point green_point"></div>
+		<% else %>
+			<div class="point red_point"></div>
+		<% end %>
+		</td>
+	</table>
+
+	<h1><%= @folder.label %></h1> 
+
+
+
+	<div class="download">
+		<a href="<%= @folder.path %>">DOWNLOAD</a>
+	</div>
+
+	<% if @folder.user == current_user %>
+		<%= link_to 'Edit', edit_folder_path(@folder), :style => "color:black;" %>
+	<% end %>
+	<% if current_user.user_type_id ==  2 #if teacher %> 
+		<%= render 'form_for_validate' %>
+	<% end %>
+</div>
+
+<p id="notice"><%= notice %></p>

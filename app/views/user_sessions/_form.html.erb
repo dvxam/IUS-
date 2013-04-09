@@ -1,0 +1,18 @@
+<div class="formAccueil">
+	<% if current_user %>
+		<h1>Utilisateur  <%= current_user %> déjà connecté</h1>
+	
+	<% else %>
+		<%= form_tag user_sessions_path, :method => :post do %>
+
+		   <%= text_field_tag :mail, nil, :placeholder => 'E-mail', :class => 'inputAccueil' %>
+
+		   <%= password_field_tag :password, nil, :placeholder => '••••••', :class => 'inputAccueil'  %>
+
+			<div class="basFormulaire">
+				<a class="motdepassAccueil" href="">Mot de passe oublié ?</a>
+				<%= submit_tag "Se Connecter", :class => 'envoyerAccueil' %>
+			</div>
+		<% end %>
+	<% end %>
+</div>

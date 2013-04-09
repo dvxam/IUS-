@@ -1,0 +1,29 @@
+<% @comments = Comment.find_all_by_post_id(id) %>
+
+<% @comments.each do |comment| %>
+
+  <%= link_to '[x]', comment, :method => :delete, :data => { :confirm => 'Are you sure?' }, :style => "color:black; float:right; margin:10px;"  %>
+
+  <div class="discussion">
+    <div class="avatarUtilisateur">
+      <% sender = comment.user %>
+      <img src="<%= sender.avatar %>" class="imageProfil">
+      <div class="libUtilisateur">
+        <span class="nomUtilisateur">
+          <%= link_to sender, sender %> 
+        </span>
+        <span class="classeUtilisateur">
+          <%= sender.class_room.label  + " - " + sender.class_room.school.label %>
+        </span>
+        <span class="dateMessage">
+          <%= comment.created_at %>
+        </span>
+        <div class="reponse">
+          <%= image_tag "flecheDiscussion.png", :id => "flecheDiscussion" %>
+          
+          <p><%= comment.content %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

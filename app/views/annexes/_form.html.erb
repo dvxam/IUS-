@@ -1,0 +1,25 @@
+<%= form_for(@annex) do |f| %>
+  <% if @annex.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@annex.errors.count, "error") %> prohibited this annex from being saved:</h2>
+
+      <ul>
+      <% @annex.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

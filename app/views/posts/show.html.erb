@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Subject:</b>
+  <%= @post.subject %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<p>
+  <b>Classroom:</b>
+  <%= @post.class_room %>
+</p>
+
+<p>
+  <b>From:</b>
+  <%= @post.sender %>
+</p>
+
+<p>
+  <b>To:</b>
+  <%= @post.receiver %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

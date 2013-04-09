@@ -1,0 +1,18 @@
+<%= form_for(@folder) do |f| %>
+  <% if @folder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
+
+      <ul>
+      <% @folder.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="discussion">
+        <%= f.text_field :label, :placeholder => "Nom du Dossier", :class => "input" %>
+        <%= f.file_field :path %>
+        <%= f.submit "Créer mon Dossier" %>
+    </div>
+<% end %>

@@ -1,0 +1,516 @@
+@import 'compass';
+
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+
+$rougeclair:#bf4835;
+$rougefonce:#a53e2d;
+$backgroundcolor:#2c3033;
+$blancecriture:#fdece9;
+$textegris:#cecece;
+$grisclasse:#9c9b9b;
+$textereponse:#666667;
+$blanccasse:#f1f0f0;
+$bordure : #c7c8c8;
+$grisleplusfonce:#222527;
+$grisFooter:#5f6365;
+$headerFormulaire:#3a3e42;
+$blancCarre :#f6f6f6;
+
+html{
+		background-color: $grisleplusfonce;
+		font-family:"Proxima Nova",Georgia,Serif;
+		color:$blancecriture;
+}
+
+.content{
+	background: $backgroundcolor;
+}
+
+header{
+	background: $rougeclair;
+	border-top: solid 8px $rougefonce;
+}
+
+
+a{
+		text-decoration: none;
+		color : $blancecriture;
+}
+.center-page{
+	width:950px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 0 auto;
+}
+#header{
+
+	padding: 12px 0 21px 0;
+	font-size:14px;
+}
+
+#page{
+	background: $backgroundcolor;
+}
+
+#footer{
+	width: 100%;
+	color: $grisFooter;
+	background-color: $grisleplusfonce;
+	margin-top:60px;
+	padding:40px 0 40px 0;
+	text-align: center;
+	
+}
+#footer span {
+
+	padding: 30px;
+}
+
+.rougefonce{
+	background:$rougefonce;
+	padding: 10px 0 0 0;
+	width:100%;
+}
+.rougeclair{
+	background:$rougeclair;
+	width:100%;
+}
+// Inline pour le menu
+#header ul li {
+	display: inline-block;
+	vertical-align: top;
+    @include text-shadow(rgba(black, 0.50) 0 0 5px);
+}
+// Espacement des liens du menu
+#logo{
+	height: 49px;
+	padding-left: 80px;
+}
+#li1 {
+	padding-left: 112px;
+}
+#li2{padding-left: 45px;}
+#li3{padding-left: 45px;}
+.gauche{
+display: inline-block;
+	vertical-align: top;
+
+}
+.droite{
+	display: inline-block;
+	vertical-align: top;
+}
+// Liens menu centre
+#header nav ul {
+	padding-top: 25px;
+}
+
+#header nav ul li a :hover{
+	color:#e8e8e8;
+}
+.gauche nav ul li a{
+	color:#c3c3c3;
+	@include text-shadow(rgba(black, 0.50) 0 0 5px);
+}
+.gauche nav ul li a :hover{
+	color:#e8e8e8;
+}
+#page .gauche{
+width:195px;
+padding:40px 0 0 21px;
+font-size: 12pt;
+letter-spacing: 0.1em;
+
+}
+#page .droite{
+width:715px;
+margin:50px 0 0 0;
+}
+#page .gauche ul li{
+	line-height: 45px;
+	padding-left: 15px;
+}
+.ajoutEnseignant{
+	margin-top: 30px;
+	display: block;
+	border-top: 1px solid #222527;
+	border-bottom: 1px solid #222527;
+	padding: 20px 0 20px 15px;
+
+}
+.dossier{
+	margin-top: 30px;
+	display: block;
+	background-color: #222527;
+	padding: 20px 20px 20px 20px;
+	text-align: center;
+	line-height: 150%;
+
+}
+.gauche a {
+	color:#c3c3c3;
+}
+.fleche{
+
+	padding: 0 0 0 10px;
+
+}
+#headerDroite{
+	border-bottom: 1px solid #303337;
+	background-color: #3a3e42;
+	padding : 23px 15px 23px 15px;
+	width: 100%;
+	letter-spacing: 0.1em;
+	@include text-shadow(rgba(black, 0.50) 0 0 5px);
+
+}
+#headerDroite a{
+		@include text-shadow(rgba(black, 0.50) 0 0 5px);
+}
+.discussion{
+
+	
+	width: 100%;
+	padding: 0 15px 30px 15px;
+	background-color: #e8e8e8;
+	border-bottom: 1px solid #c7c8c8;
+	border-top: 1px solid #f1f0f0;
+
+}
+.discussion > h1{
+	text-transform: uppercase;
+	color:$rougeclair;
+	padding: 15px 0 0 0;
+	letter-spacing: 0.1em;
+}
+.input{
+	margin-top: 23px;
+	display: block;
+	border: 1px solid #c7c8c8;
+	padding: 13px 15px 13px 15px;
+	width: 680px;
+	outline: 0 none;
+	
+}
+.reponse{
+	margin-top: 20px;
+}
+.inputReponse{
+
+	display: block;
+	border: 1px solid #c7c8c8;
+	padding: 13px 15px 13px 15px;
+	width: 550px;
+	outline: 0 none;
+	background-color:$blanccasse;
+	margin: 0 auto;
+	
+}
+#input2{
+	margin-top:-3px;
+
+	border: 1px solid #c7c8c8;
+}
+#inclureVideo{
+	display:inline-block;
+	color: #2c3033;
+	padding: 13px 0 0 20px;
+}
+#joindreVideo{
+	display:inline-block;
+	color: #bf5141;
+	margin: 0 0 0 30px;
+	padding: 0 0 0 80px;
+}
+.basArticle{
+	margin: 23px 0 0 0;
+	
+}
+
+#envoyer{
+
+	border: none;
+	background-color: $backgroundcolor;
+	float: right;
+	text-transform: uppercase;
+	color: $textegris;
+	padding: 13px 13px 13px 13px;
+	margin-right: 3px;
+	letter-spacing: 0.2em;
+}
+#plus {
+	font-weight: bold;
+}
+.imageProfil{
+
+	margin:20px 10px 0 20px;
+	border: 4px solid white;
+	 @include box-shadow(rgba(black, 0.27) 0 0 4px);
+
+}
+.libUtilisateur{
+	color:$backgroundcolor;
+	display: inline-block;
+	vertical-align: top;
+	padding: 20px 0 0 15px;
+
+
+}
+.nomUtilisateur{
+	display: block;
+}
+.nomUtilisateurG{
+	display: block;
+}
+.floatRight{
+	text-align: right;
+}
+.floatLeft{
+	text-align: left;
+}
+.classeUtilisateur{
+	display: inline-block;
+	padding: 5px 0 0 0;
+	color: $grisclasse;
+	font-size: 14px;
+}
+.classeUtilisateurG{
+	display: inline-block;
+	padding: 5px 0 0 0;
+	color: $grisclasse;
+	font-size: 14px;
+
+}
+.dateMessage{
+	display: inline-block;
+	color: $grisclasse;
+	font-size: 14px;
+}
+.dateMessageG{
+	display: inline-block;
+	color: $grisclasse;
+	font-size: 14px;
+
+}
+.reponse #flecheDiscussion2{
+	margin: -4px 0 0 545px;
+	position: absolute;
+}
+.reponse #flecheDiscussion{
+	margin: -4px 0 0 -23px;	
+	position: absolute;
+}
+.discussion .libUtilisateur .reponse{
+	color:$textereponse;
+	width: 530px;
+	background-color: $blanccasse;
+	border: solid 1px $bordure;
+	margin: 15px 0 0 0;
+	padding: 15px;
+
+}
+.discussion .libUtilisateur .reponse h1{
+	color:$rougeclair;
+	text-transform: none;
+}
+.discussion .libUtilisateur .reponse p{
+	padding: 10px 0 0 0;
+	font-size: 14.5px;
+}
+//////////////ACCEUIL////////////////////
+
+.slogan{
+	margin: 0 0 0 40px;
+	width: 550px;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	padding: 18px 0 18px 20px;
+	border-left: 1px solid $rougefonce;
+}
+
+.gaucheAcceuil{
+vertical-align: top;
+display: inline-block;
+}
+.droiteAcceuil{
+vertical-align: top;
+display: inline-block;
+}
+#page .gaucheAcceuil{
+width:465px;
+letter-spacing: 0.1em;
+margin: 60px 0 0 0;
+
+}
+#page .droiteAcceuil{
+width:465px;
+letter-spacing: 0.1em;
+margin: 60px 0 0 0;
+}
+.formulaireAcceuil{
+
+	padding: 0 30px 0 30px;
+
+}
+.formulaireAcceuil h1{
+
+	padding: 20px;
+	text-align: center;
+	background-color: $headerFormulaire ;
+	@include text-shadow(rgba(black, 0.50) 0 0 5px);
+}
+#formulaireGauche{
+
+border-right: 1px solid $headerFormulaire;
+
+}
+.formAccueil{
+	padding: 10px;
+	background-color: $blanccasse;
+	color: black;
+
+}
+.inputAccueil{
+	margin-top: 5px;
+	display: block;
+	border: 1px solid #c7c8c8;
+	padding: 13px 15px 13px 15px;
+	width: 90%;
+	outline: 0 none;
+   color: #8c8c8c;
+	
+}
+
+.selectAccueil select {
+   margin-top: 5px;
+   background: white;
+   width: 98.5%;
+   padding: 13px 15px 13px 15px;
+   border: 1px solid #ccc;
+   color: #8c8c8c;
+   -webkit-appearance: none;
+   outline: 0 none;
+   overflow: hidden;
+   border-radius: 0;
+  
+   
+} 
+.flecheSelect {
+	position: absolute;
+	margin: 23px 0 0 -25px;
+}
+.envoyerAccueil{
+
+	border: none;
+	background-color: $backgroundcolor;
+	text-transform: uppercase;
+	color: $textegris;
+	padding: 13px 13px 13px 13px;
+	margin: 10px 0 3px 0;
+	letter-spacing: 0.2em;
+	cursor: pointer;
+}
+.motdepassAccueil{
+	margin: 0 60px 0 0;
+	color:$grisclasse;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.basFormulaire{
+	text-align: right;
+}
+//////////////////ELEVE//////////////////////
+
+.utilisateur{
+	color: $backgroundcolor;
+}
+
+.mail{
+	text-decoration: underline;
+	font-size: 14px;
+}
+.fondEleve{
+	margin: 15px 0 0 20px;
+	height : 200px;
+	width : 320px;
+	background-color: $blancCarre;
+	display: inline-block;
+	border: 1px solid #c7c8c8;
+	line-height: 130%;
+	color: $grisclasse;
+
+}
+.fondEleveValid{
+	margin: 15px 0 0 20px;
+	height : 175px;
+	width : 320px;
+	background-color: $blancCarre;
+	display: inline-block;
+	border: 1px solid #c7c8c8;
+	line-height: 130%;
+	color: $grisclasse;
+
+}
+.coordonneeEleve{
+	border-bottom: 1px solid #c7c8c8;
+	padding: 10px 10px;
+}
+.classeEleve{
+	border-bottom: 1px solid #c7c8c8;
+	text-align: center;
+	padding: 10px 10px;
+}
+.rougeClasseEleve{
+	color:$rougefonce;
+}
+.validEleve{
+	border: none;
+	background-color: $backgroundcolor;
+	text-transform: uppercase;
+	color: $textegris;
+	padding: 13px 13px 13px 13px;
+	margin-right: 3px;
+	letter-spacing: 0.2em;
+	margin: 10px 5px;
+	width: 140px;
+
+}
+.refusEleve{
+	border: none;
+	background-color: $textegris;
+	text-transform: uppercase;
+	color: $backgroundcolor;
+	padding: 13px 13px 13px 13px;
+	margin-right: 3px;
+	letter-spacing: 0.2em;
+	margin: 10px 5px;
+	width: 140px;
+
+}
+.validationEleve{
+	text-align: center;
+}
+.droiteProfil{
+	display: inline-block;
+	vertical-align: top;
+	padding: 20px 0;
+}
+.supprimerEleve{text-align: center;}
+.inputSupprEleve{
+	border: none;
+	background-color: $rougefonce;
+	text-transform: uppercase;
+	color: $grisclasse;
+	padding: 13px 13px 13px 13px;
+	margin-right: 3px;
+	letter-spacing: 0.2em;
+	margin: 10px 5px;
+	width: 96%;
+}

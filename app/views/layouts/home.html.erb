@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html id="home" >
+<head>
+  <title>IUS</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+	<div class="ius-logo">
+		<%= link_to image_tag('logo.png', :id => 'logo'), root_url %>
+	</div>
+	<div class="catch-phrase">
+		plateforme collaborative pour les terminales L </br> option Droit et Grands Enjeux du Monde Contemporain
+	</div>
+</header>
+
+<div class="content">
+	bla
+</div>
+
+<footer>
+	<span>À propos de ius</span>
+	<span>Confidentialité</span>
+	<span>Conditions d'utilisations</span>
+	<span>Aide</span>
+	<span>Réalisé par Antonin Maxime & Mathias</span>
+</footer>
+
+
+<!-- 
+	<div class="rougefonce">
+		<div class="rougeclair">
+			<div id="header" class="center-page">
+				<div class="gauche">
+					   
+				</div>
+				<div class="droite">
+					<div class="slogan">plateforme collaborative pour les terminales L </br>
+						option Droit et Grands Enjeux du Monde Contemporain</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="notice">
+		<p id="notice"><%= notice %></p>
+	</div>
+	
+	<div id="page" class="center-page">
+		<div class="gaucheAcceuil">
+			<div id="formulaireGauche" class="formulaireAcceuil">
+				<h1>S'inscrire</h1>
+				<%= render 'users/form' %>
+			</div>
+		</div>
+		<div class="droiteAcceuil">
+			<div class="formulaireAcceuil">
+				<h1>Se connecter</h1>
+				<%= render 'user_sessions/form' %>
+			</div>
+		</div>
+			
+	</div>
+		<div id="footer">
+				
+				<span>À propos de ius</span>
+				<span>Confidentialité</span>
+				<span>Conditions d'utilisations</span>
+				<span>Aide</span>
+				<span>Réalisé par Antonin Maxime & Mathias</span>
+	</div>
+
+</div>
+ --></body>
+</html>	
+
+
